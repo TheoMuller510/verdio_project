@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    &:is(html) {
+    font-size: 62.5%;
+    }
+
+    &:is(body) {
+        position: relative;
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,47 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: calc($i * 100% / 12);
+    }
+  }
+
+  @for $i from 1 through 12 {
+    @include tablet {
+      .col-tablet-#{$i} {
+        width: calc($i * 100% / 12);
+      }
+    }
+  }
+
+  @for $i from 1 through 12 {
+    @include desktop {
+      .col-desktop-#{$i} {
+        width: calc($i * 100% / 12);
+      }
+    }
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  color: $color-main-text;
+  background-color: #ffffff;
+}
+
+.main-container {
+  @include container;
+}
+
+/* classes génériques de grille si tu en as besoin */
+.grid {
+  display: grid;
+  gap: $spacing-base;
+}

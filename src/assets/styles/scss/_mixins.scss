@@ -1,0 +1,37 @@
+@mixin flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@mixin button($bg, $text, $radius: $radius-base) {
+  background-color: $bg;
+  color: $text;
+  border: none;
+  border-radius: $radius;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
