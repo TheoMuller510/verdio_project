@@ -1,18 +1,28 @@
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-
+import { List } from "@phosphor-icons/react";
+import { useState } from "react";
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header>
+    <header className="header">
       <nav>
-        <Link to="/">
-            <img src={logo} alt="logo verdio" className="logo" />
+        <Link to="/" className="logo">
+          <img src={logo} alt="logo verdio" />
         </Link>
-        {/* <div class="logo"><img src={logo} alt="Logo Verdio"/></div> */}
-        <ul className="nav-links">
-          <li></li>
+
+        <button
+          className="nav-toggle"
+          aria-label="Ouvrir le menu"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <List size={28} />
+        </button>
+
+        <ul className={`nav-links ${isOpen ? "nav-links--open" : ""}`}>
           <li>
             <Link to="/challenges">Challenges</Link>
           </li>

@@ -1,0 +1,33 @@
+@use "../../assets/styles/scss/variables" as *;
+@use "../../assets/styles/scss/mixins" as *;
+
+.bottomfixed {
+
+    padding-bottom:60px;
+
+    footer {
+        background-color: $color-black;
+        color: #ffffff;
+        position:absolute;
+        left:0;
+        bottom:0;
+        right:0;
+
+        .footer-inner {
+            @include container;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        @include tablet {
+            .footer-inner {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+                align-items: center;
+            }
+        }
+    }
+}
