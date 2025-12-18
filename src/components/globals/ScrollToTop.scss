@@ -1,5 +1,6 @@
 @use "../../assets/styles/scss/variables" as *;
 @use "../../assets/styles/scss/mixins" as *;
+@use "sass:color";
 
 .scroll-to-top {
   position: fixed;
@@ -20,7 +21,7 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
 
   &:hover {
-    background-color: darken($color-primary, 5%);
+    background-color: color.adjust($color-primary, $lightness: -5%);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
   }
